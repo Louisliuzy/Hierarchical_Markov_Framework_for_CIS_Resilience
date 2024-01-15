@@ -4,21 +4,21 @@ This archive is distributed under the [MIT License](LICENSE).
 
 The source code and data in this repository are a snapshot of the software and data
 that were used in the research reported on in the manuscript under review 
-[A Two-Stage Optimization Framework for Enhancing Interconnected Critical Infrastructure Systems Resilience Under Sequential Attacks](https://www.researchgate.net/publication/377220359_A_Two-Stage_Optimization_Framework_for_Enhancing_Interconnected_Critical_Infrastructure_Systems_Resilience_Under_Sequential_Attacks) by Z. Liu et. al. The data generated for this study are included in the manuscript and the codes.
+[A Two-Stage Optimization Framework for Enhancing Interconnected Critical Infrastructure Systems Resilience Under Sequential Attacks](https://www.researchgate.net/publication/377220359_A_Two-Stage_Optimization_Framework_to_Enhance_Interconnected_Critical_Infrastructure_Systems_Resilience_Under_Sequential_Attacks) by Z. Liu et. al. The data generated for this study are included in the manuscript and the codes.
 
 ## Cite
 
-To cite this repository, please cite the [manuscript](https://www.researchgate.net/publication/377220359_A_Two-Stage_Optimization_Framework_for_Enhancing_Interconnected_Critical_Infrastructure_Systems_Resilience_Under_Sequential_Attacks).
+To cite this repository, please cite the [manuscript](https://www.researchgate.net/publication/377220359_A_Two-Stage_Optimization_Framework_to_Enhance_Interconnected_Critical_Infrastructure_Systems_Resilience_Under_Sequential_Attacks).
 
 Below is the BibTex for citing the manuscript.
 
 ```
 @article{Liu2024,
-  title={A Two-Stage Optimization Framework for Enhancing Interconnected Critical Infrastructure Systems Resilience Under Sequential Attacks},
+  title={A Two-Stage Optimization Framework to Enhance Interconnected Critical Infrastructure Systems Resilience Under Sequential Attacks},
   author={Liu, Zeyu and Li, Xueping and Khojandi, Anahita},
   journal={Preprint},
   year={2024},
-  url={https://www.researchgate.net/publication/377220359_A_Two-Stage_Optimization_Framework_for_Enhancing_Interconnected_Critical_Infrastructure_Systems_Resilience_Under_Sequential_Attacks}
+  url={https://www.researchgate.net/publication/377220359_A_Two-Stage_Optimization_Framework_to_Enhance_Interconnected_Critical_Infrastructure_Systems_Resilience_Under_Sequential_Attacks}
 },
   doi={10.13140/RG.2.2.11406.54087}
 ```
