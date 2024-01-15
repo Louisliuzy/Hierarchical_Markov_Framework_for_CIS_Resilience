@@ -1,4 +1,4 @@
-# A Two-Stage Optimization Framework for Enhancing Interconnected Critical Infrastructure Systems Resilience Under Sequential Attacks
+# A Two-Stage Optimization Framework to Enhance Interconnected Critical Infrastructure Systems Resilience Under Sequential Attacks
 
 This archive is distributed under the [MIT License](LICENSE).
 
