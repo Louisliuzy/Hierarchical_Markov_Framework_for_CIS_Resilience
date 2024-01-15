@@ -4,7 +4,7 @@ This archive is distributed under the [MIT License](LICENSE).
 
 The source code and data in this repository are a snapshot of the software and data
 that were used in the research reported on in the manuscript under review 
-[A Two-Stage Optimization Framework for Enhancing Interconnected Critical Infrastructure Systems Resilience Under Sequential Attacks](https://www.researchgate.net/publication/377220359_A_Two-Stage_Optimization_Framework_to_Enhance_Interconnected_Critical_Infrastructure_Systems_Resilience_Under_Sequential_Attacks) by Z. Liu et. al. The data generated for this study are included in the manuscript and the codes.
+[A Two-Stage Optimization Framework to Enhance Interconnected Critical Infrastructure Systems Resilience Under Sequential Attacks](https://www.researchgate.net/publication/377220359_A_Two-Stage_Optimization_Framework_to_Enhance_Interconnected_Critical_Infrastructure_Systems_Resilience_Under_Sequential_Attacks) by Z. Liu et. al. The data generated for this study are included in the manuscript and the codes.
 
 ## Cite
 
