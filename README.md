@@ -20,7 +20,7 @@ Below is the BibTex for citing the manuscript.
   year={2024},
   url={https://www.researchgate.net/publication/377220359_A_Two-Stage_Optimization_Framework_to_Enhance_Interconnected_Critical_Infrastructure_Systems_Resilience_Under_Sequential_Attacks}
 },
-  doi={10.13140/RG.2.2.11406.54087}
+  doi={10.13140/RG.2.2.11406.54087/1}
 ```
 
 ## Description
