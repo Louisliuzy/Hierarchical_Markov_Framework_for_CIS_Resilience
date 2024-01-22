@@ -35,12 +35,13 @@ The following Python libraries are required to run the source codes:
 2. `scipy`;
 3. `pickle`;
 4. `networkx`;
-5. `gurobipy`.
+5. `gurobipy`;
+6. `matplotlib`.
 
 
 ## Usage
 
-Run `CIS()` function in the `main.py` file in the `scripts/` folder. Different instances can be set up using the provided variables of network size, total budget, and attack and defense intensities. Three algorithms are available, including the default Gurobi solver (`NLP`), generalized Benders decomposition (`GBD`), and a novel nested decomposition with policy iteration (`NDPI`). Note that it may take hours to complete larger instances especially for `NLP`. Please refer to the manuscript for detailed algorithm comparison.
+Run `CIS()` function in the `main.py` file in the `scripts/` folder. Different instances can be set up using the provided variables of network size, total budget, and attack and defense intensities. Three algorithms are available, including the default Gurobi solver (`NLP`), generalized Benders decomposition (`GBD`), and a novel nested decomposition with policy iteration (`NDPI`). Plot functions are also available in the `main.py` file for generating results. In addition, run the `knox.py` file in the `scripts/` folder for the case study. Note that it may take hours/days to complete larger instances especially for `NLP`. Please refer to the manuscript for detailed algorithm comparison. 
 
 
 ## Support

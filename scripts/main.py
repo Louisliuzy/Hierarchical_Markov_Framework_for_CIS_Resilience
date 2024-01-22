@@ -35,6 +35,7 @@ import numpy as np
 import networkx as nx
 import scipy.stats as st
 from model import CIS_Defense
+import matplotlib.pyplot as plt
 
 
 # generate G and Pr
@@ -76,6 +77,131 @@ def generate_network(V_I, V_D):
     Pr = Pr / np.sum(Pr)
     # return
     return G, Pr
+
+
+def plot_G(name, G, solution):
+    """
+    Plot G
+    """
+    # node size
+    nodesize = np.array([G.nodes[i]['r'] for i in G.nodes()])
+    nodesize = nodesize / nodesize.sum()
+    # figure
+    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 6))
+    nx.draw_networkx(
+        G,
+        # distance-based layout
+        pos=nx.kamada_kawai_layout(G, weight='c_s'),
+        ax=ax, with_labels=True, font_size=14,
+        node_size=nodesize * 15000,
+        node_color="white",
+        edgecolors="black", linewidths=2, width=2,
+        edgelist=solution['service'], arrows=True, arrowstyle="-|>"
+    )
+    nx.draw_networkx_edge_labels(
+        G,
+        # distance-based layout
+        pos=nx.kamada_kawai_layout(G, weight='c_s'),
+        edge_labels=solution['service_cost'], font_size=14
+    )
+    fig.tight_layout()
+    fig.savefig(f"figs/{name}.png", dpi=300)
+    return
+
+
+def plot_pi(name, problem, solution):
+    """plot pi"""
+    # heatmap matrix
+    heatmap = np.zeros(shape=(len(problem.G.nodes()), len(problem.S)))
+    for i in problem.G.nodes():
+        for s in problem.S:
+            heatmap[
+                len(problem.G.nodes()) - 1 - i, s
+            ] = problem.A_lst[solution['policy'][s]][i]
+    # figure
+    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(9, 3.75))
+    im = ax.imshow(heatmap, cmap="Purples", aspect=2, vmin=-1.5, vmax=3)
+    # Create colorbar
+    ax.figure.colorbar(
+        im, ax=ax, orientation="horizontal",
+        ticks=[0, 1, 2], location="top", values=[0, 1, 2],
+        fraction=0.045, label="Policy"
+    )
+    # ticks
+    ax.set_xticks(
+        [i for i in range(1, 64, 2)],
+        labels=[problem.S_lst[i] for i in range(1, 64, 2)]
+    )
+    ax.set_yticks(
+        np.arange(heatmap.shape[0]),
+        labels=[f'CIS {i}' for i in range(len(problem.G.nodes()) - 1, -1, -1)]
+    )
+    # label
+    ax.set_xlabel("States")
+    # rotate
+    plt.setp(
+        ax.get_xticklabels(), rotation=60, ha="right",
+        rotation_mode="anchor"
+    )
+    # white grid
+    ax.spines[:].set_visible(False)
+    ax.set_xticks(np.arange(heatmap.shape[1]+1)-.5, minor=True)
+    ax.set_yticks(np.arange(heatmap.shape[0]+1)-.5, minor=True)
+    ax.grid(which="minor", color="w", linestyle='-', linewidth=1)
+    ax.tick_params(which="minor", bottom=False, left=False)
+    fig.tight_layout()
+    fig.savefig(f"figs/{name}-policy.png", dpi=300)
+    return
+
+
+def plot_V(name, problem, solution):
+    """plot V"""
+    # sample paths
+    path = 20
+    heatmap = np.zeros(shape=(len(problem.G.nodes()) + 1, path))
+    for k in range(path):
+        # initial
+        s = [1] * len(problem.G.nodes())
+        heatmap[0, k] = solution['value'][problem.S_lst.index(tuple(s))]
+        for i in range(1, len(problem.G.nodes()) + 1):
+            indices = [j for j in range(len(s)) if s[j] == 1]
+            ind = np.random.choice(indices)
+            s[ind] = 0
+            heatmap[i, k] = solution['value'][problem.S_lst.index(tuple(s))]
+    # max v
+    v_max = np.max(list(solution['value'].values()))
+    # figure
+    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(10, 5))
+    im = ax.imshow(
+        heatmap, cmap="Greens", aspect=1, vmin=-500, vmax=v_max)
+    # Create colorbar
+    ax.figure.colorbar(
+        im, ax=ax, orientation="horizontal", location="top",
+        fraction=0.045, label="State values",
+        boundaries=np.linspace(0, v_max, 1000),
+        ticks=[0, 400, 800, 1200, 1500]
+    )
+    # ticks
+    ax.set_xticks(
+        np.arange(heatmap.shape[1]),
+        labels=[i for i in range(path)]
+    )
+    ax.set_yticks(
+        [i for i in range(len(problem.G.nodes()) + 1)],
+        labels=[i for i in range(len(problem.G.nodes()), -1, -1)]
+    )
+    # label
+    ax.set_ylabel("Number of functional CIS")
+    ax.set_xlabel("Sample paths")
+    # white grid
+    ax.spines[:].set_visible(False)
+    ax.set_xticks(np.arange(heatmap.shape[1]+1)-.5, minor=True)
+    ax.set_yticks(np.arange(heatmap.shape[0]+1)-.5, minor=True)
+    ax.grid(which="minor", color="w", linestyle='-', linewidth=1)
+    ax.tick_params(which="minor", bottom=False, left=False)
+    fig.tight_layout()
+    fig.savefig(f"figs/{name}-value.png", dpi=300)
+    return
 
 
 def CIS(n_instance=1):
