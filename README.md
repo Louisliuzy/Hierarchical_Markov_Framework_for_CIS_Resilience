@@ -1,26 +1,23 @@
-# A Two-Stage Optimization Framework to Enhance Interconnected Critical Infrastructure Systems Resilience Under Sequential Attacks
+# A Hierarchical Markov Decision Framework for Enhancing Critical Infrastructure Resilience Under Sequential Interdictions
 
 This archive is distributed under the [MIT License](LICENSE).
 
 The source code and data in this repository are a snapshot of the software and data
-that were used in the research reported on in the manuscript under review 
-[A Two-Stage Optimization Framework to Enhance Interconnected Critical Infrastructure Systems Resilience Under Sequential Attacks](https://www.researchgate.net/publication/377220359_A_Two-Stage_Optimization_Framework_to_Enhance_Interconnected_Critical_Infrastructure_Systems_Resilience_Under_Sequential_Attacks) by Z. Liu et. al. The data generated for this study are included in the manuscript and the codes.
+that were used in the research reported on in the manuscript under review: "A Hierarchical Markov Decision Framework for Enhancing Critical Infrastructure Resilience Under Sequential Interdictions" by Z. Liu et. al. The data generated for this study are included in the manuscript and the codes.
 
 ## Cite
 
-To cite this repository, please cite the [manuscript](https://www.researchgate.net/publication/377220359_A_Two-Stage_Optimization_Framework_to_Enhance_Interconnected_Critical_Infrastructure_Systems_Resilience_Under_Sequential_Attacks).
+To cite this repository, please cite the manuscript.
 
 Below is the BibTex for citing the manuscript.
 
 ```
 @article{Liu2024,
-  title={A Two-Stage Optimization Framework to Enhance Interconnected Critical Infrastructure Systems Resilience Under Sequential Attacks},
+  title={A Hierarchical Markov Decision Framework for Enhancing Critical Infrastructure Resilience Under Sequential Interdictions},
   author={Liu, Zeyu and Li, Xueping and Khojandi, Anahita},
   journal={Preprint},
   year={2024},
-  url={https://www.researchgate.net/publication/377220359_A_Two-Stage_Optimization_Framework_to_Enhance_Interconnected_Critical_Infrastructure_Systems_Resilience_Under_Sequential_Attacks}
-},
-  doi={10.13140/RG.2.2.11406.54087/1}
+}
 ```
 
 ## Description
@@ -49,4 +46,4 @@ Run `CIS()` function in the `main.py` file in the `scripts/` folder. Different i
 ## Support
 
 For support in using this software, submit an
-[issue](https://github.com/Louisliuzy/Two-Stage_Optimization_for_CIS_Resilience/issues/new).
+[issue](https://github.com/Louisliuzy/Hierarchical_Markov_Framework_for_CIS_Resilience/issues).
